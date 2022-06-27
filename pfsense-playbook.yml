@@ -1,0 +1,12 @@
+---
+- hosts: all
+- name: setup remote syslog
+  pfsense_log_settings:
+    enable: true
+    remoteserver: 172.17.0.46:8080
+    disablelocallogging: true
+    logall: true
+
+- name: always log default pass traffic
+  pfsense_log_settings:
+    nologdefaultpass: false
